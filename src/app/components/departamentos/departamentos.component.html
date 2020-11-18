@@ -1,0 +1,34 @@
+<div *ngIf="arrayDepartamentos.length > 0">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Nombre</th>
+        <th>Localidad</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let departamento of arrayDepartamentos">
+        <td>{{ departamento.numero }}</td>
+        <td>{{ departamento.nombre }}</td>
+        <td>{{ departamento.localidad }}</td>
+        <td>
+          <a
+            class="btn btn-danger"
+            [routerLink]="['/eliminar', departamento.numero]"
+            >X</a
+          >
+        </td>
+        <td>
+          <a
+            class="btn btn-warning"
+            [routerLink]="['/update', departamento.numero]"
+            >Modificar</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
